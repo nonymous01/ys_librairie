@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription</title>
+    <link rel="stylesheet" href=" {{url_for('static', filename='css/modif.css')}} ">
+    <style>
+        .conne{
+            width: 100%;
+        }
+    </style>
+</head>
+<body> <div class="f1"></div>
+    <form action="{{'/article'}}" method="post" class="pri"> 
+           
+            <div class="moi2">              
+                <div class="cont"> 
+                    <div class="conne"><h4>Ajouter Article</h4></div>
+                    <input type="text" name="name" placeholder="Nom du livre" id="" value="" required>
+                    <!-- <input type="file" name="file" placeholder="Ajouter l'image" value="" id="" required>  -->
+                    <input type="tel" name="prix" placeholder="prix du livre" value="" id="" required> 
+                    <input type="submit" name="" id="buttons"  >
+                </div>
+            </div>
+    </form> 
+</body>
+</html>

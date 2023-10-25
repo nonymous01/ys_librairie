@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/payement.css' )}}">
+</head>
+<body>
+    <div class="nav1">
+        <div class="element1"><p>YS_BOOK</p><strong> <a href="" id="affich"></a></strong></div>
+        <div class="element2">
+            <div class="bergb">
+                <input type="checkbox" id="berg">
+                <label for="berg"><img src="{{url_for('static',filename='image/ico.png')}} " height="30px" alt=""></label>
+                <div class="hgfd">
+                    <ul>
+                        <li ><a href="./login" >DECONNEXION</a></li>
+                        <li ><a href="./accueil" >ACCUEIL</a></li>
+                        <li ><a href="./admin">PROFIL</a></li>
+                        <li><a href="./commande">COMMANDE</a></li>
+                    </ul>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <header>
+        
+       <form action="/paiement" method="post">
+        <div class="conttt">
+            <div class="espae_payement">
+                <img src="{{url_for('static', filename='image/visa.png')}}" height="40px" alt="">
+                <img src="{{url_for('static', filename='image/visa.png')}}" height="40px" alt="">
+                <img src="{{url_for('static', filename='image/visa.png')}}" height="40px" alt="">
+            </div> 
+            {% with messages = get_flashed_messages() %}
+            {% if messages  %}
+                
+                    {% for message in messages %}
+                    <p style="color: rgb(44, 57, 46);list-style-type: none; font-size: 0.5rem;"> {{message}} </p> 
+                    {% endfor %}
+            
+            {% endif %}
+        {% endwith %}
+            <div class="amount">payement amount</div><br>   
+            <div class="ppppp" >$232</div>
+            <input type="text" name="name_carte" id="" placeholder="name carte"><br>
+            <input type="tel" name="num_carte" id="" placeholder="num carte"><br>
+            <input type="datetime" name="Expiry" id="" placeholder="MM/YY"><br>
+            <input type="text" name="security" placeholder="security date" id=""><br>
+            
+            <button type="submit">pay</button>
+            
+        </div>
+        </form>
+        
+    </header>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>panier</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/panier.css')}}">
+</head>
+<body>
+    <div class="nav1">
+        <div class="element1"><p>YS‿BOOK</p><strong> <a href="" id="affich"></a></strong></div>
+        <div class="element2">
+            <div class="bergb">
+                <input type="checkbox" id="berg">
+                <label for="berg"><img src="{{url_for('static',filename='image/menu.png')}} " height="30px" alt=""></label>
+                <div class="hgfd">
+                    <ul>
+                        <li><a href="./ajouter">ACCUEIL</a></li>
+                        <li><a href="ajouter">CATEGORIE</a></li>
+                        <li><a href="admin">PROFIL</a></li>
+                        <li><a href="commande">COMMANDE</a></li>
+                        <li><a href="ajouter">DECONNEXION</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dd">
+                <li><a href="./ajouter">ACCUEIL</a></li>
+                <li><a href="ajouter">CATEGORIE</a></li>
+                <li><a href="admin">PROFIL</a></li>
+                <li><a href="commande">COMMANDE</a></li>
+            </ul>
+            <input type="search" name="" placeholder="RECHERCHE..." id="recherche">
+        </div>
+    </div>
+    <form action="">
+        <div class="panier1">
+            {% for panier in paniers %}
+             <div class="cont">          
+                <div class="el">
+                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
+                </div>
+                
+                <div class="el1">{{panier.name}}
+                </div>
+                <div class="el3">
+                    <div class="pri">Prix</div>
+                    <div class="pri1">{{panier.prix}}$</div>
+                </div>
+                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
+            </div><br><br> 
+            {% endfor %}
+            <div class="cont">          
+                <div class="el">
+                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
+                </div>
+                
+                <div class="el1">azer
+                </div>
+                <div class="el3">
+                    <div class="pri">Prix</div>
+                    <div class="pri1">1234$</div>
+                </div>
+                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
+            </div><br><br> 
+            
+            <div class="cont">          
+                <div class="el">
+                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
+                </div>
+                
+                <div class="el1">Lorem ipsum dolor sit amet.
+                </div>
+                <div class="el3">
+                    <div class="pri">Prix</div>
+                    <div class="pri1">123$</div>
+                </div>
+                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
+            </div><br><br> 
+            <div class="cont">          
+                <div class="el">
+                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
+                </div>
+                
+                <div class="el1">Lorem ipsum dolor sit amet.
+                </div>
+                <div class="el3">
+                    <div class="pri">Prix</div>
+                    <div class="pri1">123$</div>
+                </div>
+                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
+            </div><br><br> 
+            
+          
+            
+
+            
+        </div>
+        <div class="panier2">
+            <div class="total">
+                <div class="tt1">
+                    <div class="aa">TOTAL</div>
+                    <div class="aa1">232$</div>
+                </div>
+                <div class="tt2">
+                    <div class="val">
+                        <a href="./payement">Valider ma commande</a>
+                    </div>
+                </div>
+            </div>        
+        </div>
+        
+        
+       
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/commande.css')}}">
+</head>
+<body>
+    <div class="nav1">
+        <div class="element1"><a href="">YS‿BOOK</a><strong> <a href="" id="affich"></a></strong></div>
+        <div class="element2">
+            <div class="bergb">
+                <input type="checkbox" id="berg">
+                <label for="berg"><img src="{{url_for('static',filename='image/menu.png')}} " height="30px" alt=""></label>
+                <div class="hgfd">
+                    <ul>
+                        <li ><a href="" >DECONNEXION</a></li>
+                        <li ><a href="" >ACCUEIL</a></li>
+                        <li ><a href="">PROFIL</a></li>
+                        <li><a href="">COMMANDE</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="dd">
+                <li><a href="./accueil">ACCUEIL</a></li>
+                <li><a href="">A PROPOS</a></li>
+                <li><a href="./admin">PROFIL</a></li>
+                <li><a href="./commande">COMMANDE</a></li>
+            </ul>
+            <input type="search" name="" placeholder="RECHERCHE..." id="recherche">
+
+        </div>
+        
+    </div>
+    <div class="util">
+        <div class="content">
+            <div class="im">
+                <div class="iimages">
+                    <img src="{{url_for('static', filename='image/pirate.png')}}"  alt="">
+                </div>
+            </div>
+            <div class="im1">
+              
+                <div class="elements">
+                    <div class="nomm">
+                        <div class="choix">DATE DE COMMADE</div>
+                        <div class="choix1">CATEGORIE</div>
+                        <div class="choix2">NB_LIVRE</div>
+                        <div class="choix3">PRIX</div>
+                    </div>
+                    <div class="nomm1">
+                        <div class="choix3">30/12/2023</div>
+                        <div class="choix2">HACKING</div>
+                        <div class="choix1">2</div>
+                        <div class="choix">100$</div>
+                    </div>
+                </div>
+            </div>
+
+          
+            
+        </div>
+    </div>
+</body>
+</html>

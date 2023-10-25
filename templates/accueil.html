@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href=" {{url_for('static', filename='css/style.css')}} ">
+</head>
+<body>
+            <div class="nav1">
+                <div class="element1"><p>YS‿BOOK</p><strong> <a href="" id="affich"></a></strong></div>
+                <div class="element2">
+                    <div class="bergb">
+                        <input type="checkbox" id="berg">
+                        <label for="berg"><img src="{{url_for('static',filename='image/menu.png')}} " height="30px" alt=""></label>
+                        <div class="hgfd">
+                            <ul>
+                                <li ><a href="./login" >DECONNEXION</a></li>
+                                <li ><a href="" >ACCUEIL</a></li>
+                                <li ><a href="./admin">PROFIL</a></li>
+                                <li><a href="./commande">COMMANDE</a></li>
+                                <li><a href="#azer">CATEGORIE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="dd">                     
+                        <li><a href="#">ACCUEIL</a></li>
+                        <li><a href="#azer">CATEGORIE</a></li>
+                        <li><a href="#apropos">A PROPOS</a></li>
+                        <li><a href="./admin">PROFIL</a></li>
+                        <li><a href="./commande">COMMANDE</a></li>
+                    </ul>
+                    <input type="search" name="" placeholder="RECHERCHE..." id="recherche">
+                </div>
+            </div>
+            <header>
+                {% with messages = get_flashed_messages() %}
+                {% if messages  %}
+                    
+                        {% for message in messages %}
+                        <p style="color: rgb(44, 57, 46);list-style-type: none; font-size: 0.5rem;"> {{message}} </p> 
+                        {% endfor %}
+                
+                {% endif %}
+            {% endwith %}
+                <div class="full">
+                    <div class="bag">
+                        <p>
+                            Ma librairie part tout avec moi: votre solution incontournable pour <br>
+                            simplifier le developpement. Des fonctionnalités puissantes, une <br>
+                                        documentation complète, et une utilisation facile. <br>
+                                                        Essayez maintenant!                </p>
+                        </div>
+                        <div class="vide"></div>
+                        <div class="orange">
+                            <div class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, error?
+                            </div>
+                        </div>
+                        <div class="image_cont">
+                             <img src=" {{url_for('static', filename='image/ac.webp')}} " alt=""> 
+                        </div>
+                        <div class="image_txt">
+                            <h2>BIENVENUE!</h2> <br><br><br>
+                            <h4>Ma librairie part tout avec moi: votre solution incontournable pour <br>
+                                simplifier le developpement. Des fonctionnalités puissantes</h4>
+                                    {% if 'user_name' in session %}
+                                <div class="but"><a href=" "> {{session ['user_name']}} </a></div>
+                                    {% endif %}
+                        </div>
+                </div>
+                <div class="tect" id="azer"><h3>CATEGORIE</h3></div>
+               <div class="collect">
+                <div class="cont_coll"></div>
+                    <div class="coll">
+                        <div class="hack1">
+                           <a href="#hack" id=""> <img src=" {{url_for('static', filename='image/pirate.png')}} " height="60px" alt="#hack"></a>
+                        </div>
+                        <div class="hack2">
+                           <a href="#progra"> <img src=" {{url_for('static', filename='image/programmation.png')}} " height="60px" alt="#hack"></a>
+                        </div>
+                        <div class="hack3">
+                           <a href="#main"> <img src=" {{url_for('static', filename='image/soutien.png')}} " height="60px" alt="#hack"></a>
+                        </div>
+                        <div class="hack4">
+                           <a href="" id="hack"> <img src=" {{url_for('static', filename='image/mot-de-passe.png')}} " height="60px" alt=""></a>
+                        </div>
+                    </div>
+               </div>
+
+
+               <div class="tect1" ><h3 class="HACKING"  id="hack">HACKING</h3></div>
+               <div class="collect1">
+                    <div class="block">
+                        <div class="l1">
+                            <div class="ll">
+                                <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                            </div>
+                            <div class="ll2">
+                                <div class="doc">Lorem ipsum dolor sit amet.</div>
+                                <div class="doc1">
+                                    <div class="cod1">
+                                        <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                    </div>
+                                    <div class="cod2">
+                                        350$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                     
+                    </div> 
+                    {% for data in ajout %}
+                    <div class="block">
+                        <div class="l1">
+                            <form action="/panier_ajoute" method="post">
+                                <div class="ll">
+                                    <button type="submit" style="height: 170px; width: 150px; border: none;"> <img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"   alt="">
+                                    </button  >
+                                </div>
+                                
+                                    <div class="ll2">
+                                        <div class="doc">{{data.name}}</div>
+                                        <input type="text" name="name" id="" value="{{data.name}}" style="width: 0px; height: 0px;display: none;">
+                                        <div class="doc1">
+                                            <div class="cod1">
+                                                <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                            </div>
+                                            <div class="cod2">
+                                                {{data.prix}}
+                                                <input type="text" name="prix" id="" value="{{data.prix}}" style="width: 0px; height: 0px; display: none;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                      
+                            
+                        </div>                     
+                    </div> 
+                {% endfor %}   
+                  
+           </div>
+
+
+
+           
+
+            <div class="tect1"><h3 class="PROGRAMMATION"  >PROGRAMMATION</h3></div>
+           <div class="collect4">
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    450$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>  
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2" id="main">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>   
+                    
+           </div>
+
+
+
+           
+
+           <div class="tect1" ><h3 class="PROGRTION"  id="hack">MAINTENANCE</h3></div>
+           <div class="collect5">
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    450$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>  
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div> 
+                <div class="block">
+                    <div class="l1">
+                        <div class="ll">
+                            <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
+                        </div>
+                        <div class="ll2">
+                            <div class="doc">Lorem ipsum dolor sit amet.</div>
+                            <div class="doc1">
+                                <div class="cod1">
+                                    <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
+                                </div>
+                                <div class="cod2">
+                                    350$
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>   
+                 
+           </div>
+
+
+                
+                <div class="tect1" id="apropos"><h3 class="mation">A PROPOS</h3></div>
+                <div class="collect11">
+                     <div class="apropos">
+                            <div class="app1">
+                                <p>
+                                    Découvrez notre vaste collection de livres pour les passionnés 
+                                    de programmation, hacking et maintenance informatique. Que vous
+                                     soyez débutant ou expert, notre sélection couvre langages de
+                                      programmation, sécurité informatique et gestion des réseaux.
+                                       Plongez dans l'univers de la technologie avec nos ouvrages
+                                        rédigés par des experts renommés. Apprenez, innovez et 
+                                        sécurisez grâce à nos ressources pédagogiques essentielles.
+                                </p>
+                            </div>
+                            <div class="app2">
+                                <img src="{{url_for('static', filename=('image/apropos.jpeg'))}}" height="100%" width="100%" alt="">
+                            </div>
+                        </div>
+                </div>
+               
+               <div class="footer" id="footer">
+                <div class="foot1">
+                    <p>
+                        APPELEZ NOUS <br><br>
+                        222333333 <br><br>
+                        COURRIER <br> <br>
+                  info@youssef.com <br> <br>
+                             LIEU <br> <br>
+                       LA, CALIFORNI
+                    </p>
+                </div>
+                <div class="foot2">
+                    <form action="">
+                        <input type="text" name="" id="" placeholder="nom"><br>
+                        <input type="email" name="" id="" placeholder="e-mail"><br>
+                        <textarea name="un message" id="" cols="30" rows="10"  placeholder="votre message"></textarea>
+                        <button class="button">envoie</button>
+                    </form>
+                </div>
+                <div class="foot3">
+                    <button class="button1"><a href="{{'login'}}" style="color: white; text-decoration: none;">DECONNEXION</a></button>
+                </div>
+               </div>
+            </header>
+
+</body>
+</html>

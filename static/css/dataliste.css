@@ -1,0 +1,118 @@
+
+body{
+    padding: 0 ;
+    margin: 0 auto;
+}
+table{
+    width: 75%;
+    height: 100px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+     box-shadow: 1px 1px 8px 1px rgb(184, 186, 189); 
+    border-collapse: collapse;
+    position: relative;
+    border: #797979;
+    top: 30px;
+}
+.azert11{
+    color: white;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.azert{
+    background-color: #0d70e1;
+    color: white;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.azert1{
+    background-color: #9c0202;
+    color: white;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.admi{
+    background-color: rgb(152, 49, 11);
+    width: 60%;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: white;
+    padding-top: 14px;
+    
+}
+
+a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+.Ajouter{
+    background-color: rgba(214, 79, 11, 0.869);
+    width: 35%;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+.Ajouter:hover{
+    border: 1px solid white;
+    background-color: #1c0eeb;
+    color: white;
+    box-shadow:1px 1px 1px 1px white;
+
+}
+
+.Ajouters{
+    background-color: #1c0eeb;
+    border-radius: 0  10px  10px 0;
+    width: 35%;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+}
+.Ajouters:hover{
+    border: 1px solid white;
+    background-color: rgba(214, 79, 11, 0.869);
+    color: white;
+    box-shadow:1px 1px 1px 1px white;
+
+}
+
+.Ajouters a{
+    color: white;
+    position: relative;
+    top: 10px;
+}
+.cccccc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 40px;
+    
+   
+}
+ /* td{
+    border: 2px solid rgb(103, 132, 100);
+}
+th{
+    border: 2px solid rgb(103, 132, 100);
+}  */

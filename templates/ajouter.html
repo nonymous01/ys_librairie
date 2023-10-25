@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription</title>
+    <link rel="stylesheet" href=" {{url_for('static', filename='css/modif.css')}} ">
+<style>
+    .conne{
+        width: 100%;
+    }
+</style>
+</head>
+<body> <div class="f1"></div>
+    <form action="/add_user" method="post" class="pri"> 
+        {% with messages = get_flashed_messages() %}
+        {% if messages  %}
+            
+                {% for message in messages %}
+                <p style="color: rgb(8, 161, 33);list-style-type: none; font-size: 0.5rem;"> {{message}} </p> 
+                {% endfor %}
+        
+        {% endif %}
+    {% endwith %}
+           
+            <div class="moi2">
+                <!--  -->
+               
+                <div class="cont"> 
+                    <div class="conne"><h4>Ajouter un utilisateur</h4></div>
+                  
+                    <input type="text" name="name" placeholder="Nom" id=""  required>
+                    <input type="email" name="email" placeholder="Adresse e-mail"  id="" required>
+                    <input type="tel" name="tel" placeholder="Numéros"  id="" required> 
+                    <input type="password" placeholder="Mot de passe" name="password"  id="" required>
+                    <input type="submit" name="" id="">
+                </div>
+            </div>
+    </form> 
+</body>
+</html>

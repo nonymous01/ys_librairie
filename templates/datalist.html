@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataliste</title>
+    <link rel="stylesheet" href=" {{url_for('static', filename='css/dataliste.css')}}">
+</head>
+<body>
+  <div class="admi">Espace Administrateur</div>
+  <table border="1">
+    <thead>
+        <th>id</th>
+        <th>nom</th>
+        <th>email</th>
+        <th>tel</th>
+    </thead>
+    {% for dataa in listdata %}
+    <tbody>
+        <td>{{dataa.id}}</td><br>
+        <td>{{dataa.name}}</td> 
+        <td>{{dataa.email}}</td> 
+        <td>{{dataa.tel}}</td> 
+        <td><a href="{{url_for('update',id=dataa.id)}}"><div class="azert">modifier</div></a></td>
+        <td><a href="{{url_for('delete_user',id=dataa.id)}}"><div class="azert1">supprimer</div></a></td>
+    </tbody>
+    {% endfor %}
+    <div class="cccccc">
+      <div class="Ajouter"><a href="{{url_for('add_user')}}"><div class="azert11">ajouter un utilisateur</div></a></div class="Ajouter">
+      <div class="Ajouters"><a href="{{url_for('image')}}"><div class="azert111">ajouter un livre</div></a></div class="Ajouter">
+    </div>
+  </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscription</title>
+    <link rel="stylesheet" href=" {{url_for('static', filename='css/connexion.css')}} ">
+
+</head>
+<body> <div class="f1"></div>
+    <form action="/login" method="post" class="pri"> 
+            <div class="moi1">
+                <div class="text1">
+                    <h2 class="num">NUMERO</h2><br>
+                    <p>0759177681</p>
+                    <p>0759177681</p>
+                </div>
+                <div class="text2">
+                    <h2>LOCALISATION</h2>
+                    <p>123 Rock Screet,23-23</p>
+                    <p>123 Rock Screet,23-23</p>
+                </div>
+                <div class="text3">
+                    <h2 class="sss">SERVICE</h2><br>
+                    <p>123 Rock Screet,23-23</p>
+                    <p>123 Rock Screet,23-23</p>
+                </div>
+            </div>
+            <div class="moi2">
+                <div class="conne"><h4>CONNEXION</h4></div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages  %}
+                        <ul style="text-align: center;">
+                            {% for message in messages %}
+                            <li style="color: rgb(4, 255, 146);list-style-type: none; font-size: 1rem; padding-bottom: 20px;"> {{message}} </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                <div class="cont">
+                    <input type="email" name="email" placeholder="Adresse e-mail" id="" required>
+                    <input type="password" placeholder="Mot de passe" name="password" id="" required>
+                    <p class="pppp" style="position: relative;justify-content: center;text-align: center;top: -34px; font-size: 12px;">vous n'avez pas un compte inscrivez-vous? <a href="{{'register'}}">ici</a></p>
+                    <button class="envoie" type="submit">Connexion</button>
+                </div>
+            </div>
+    </form> 
+</body>
+</html>
