@@ -281,7 +281,6 @@ def panier_ajoute():
         db.session.commit()
         return redirect("/ajouter")
     return render_template('panier.html')
-Youssef
 
 # supp les info de la class panier
 
