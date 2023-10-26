@@ -14,7 +14,7 @@
                 <div class="element2">
                     <div class="bergb">
                         <input type="checkbox" id="berg">
-                        <label for="berg"><img src="{{url_for('static',filename='image/menu.png')}} " height="30px" alt=""></label>
+                        <label for="berg"><img src="{{url_for('static',filename='image/menu.png')}} "  alt=""></label>
                         <div class="hgfd">
                             <ul>
                                 <li ><a href="./login" >DECONNEXION</a></li>
@@ -32,7 +32,8 @@
                         <li><a href="./admin">PROFIL</a></li>
                         <li><a href="./commande">COMMANDE</a></li>
                     </ul>
-                    <input type="search" name="" placeholder="RECHERCHE..." id="recherche">
+                    <div style="background-color: blue; width: 100px;"> {{cpt}} </div>
+                    <a href="{{url_for('show_panier')}}"><div id="recherche"><img src="{{url_for('static', filename='image/panier.png')}}" height="30px"  alt=""></div></a>
                 </div>
             </div>
             <header>
@@ -71,6 +72,7 @@
                                     {% endif %}
                         </div>
                 </div>
+
                 <div class="tect" id="azer"><h3>CATEGORIE</h3></div>
                <div class="collect">
                 <div class="cont_coll"></div>
@@ -93,24 +95,7 @@
 
                <div class="tect1" ><h3 class="HACKING"  id="hack">HACKING</h3></div>
                <div class="collect1">
-                    <div class="block">
-                        <div class="l1">
-                            <div class="ll">
-                                <a href="./panier"><img src=" {{url_for('static', filename='image/9782717868104_internet_w200.jpeg')}} "  height="100%" width="100%"  alt=""></a>
-                            </div>
-                            <div class="ll2">
-                                <div class="doc">Lorem ipsum dolor sit amet.</div>
-                                <div class="doc1">
-                                    <div class="cod1">
-                                        <img src=" {{url_for('static', filename='image/evaluation (2).png')}} "  class="cod_image" alt="">
-                                    </div>
-                                    <div class="cod2">
-                                        350$
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                     
-                    </div> 
+
                     {% for data in ajout %}
                     <div class="block">
                         <div class="l1">

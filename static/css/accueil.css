@@ -72,17 +72,14 @@ header{
     display: none;
 }
 #recherche{
-    background-color: #ad723b;
+    background-color: #cf0000;
     border: none;
-    width: 25%;
-
-    outline: none;
+    width: 5%;
     height: 40px;
     position: relative;
-    left: 65%;
     top: 5px;
-    border-radius: 10px;
 }
+
 .orange{
     background-color: #994900;
     width: 38%;
@@ -376,7 +373,6 @@ h4{
 .ll{
     width: 100%;
     height:170px;
-    border: 2px solid red;
 }
 .fffff{
     background-color: #082b1a;

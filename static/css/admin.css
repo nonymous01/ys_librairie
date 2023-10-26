@@ -68,8 +68,12 @@ header{
     left: 65%;
     top: -10px;
     border-radius: 10px;
+    outline: none;
+    color: white;
 }
-
+::placeholder{
+    color: white;
+}
 .util{
     background-color: rgb(226, 226, 226);
     width: 100%;
@@ -82,8 +86,8 @@ header{
 .content{
     position: relative;
     background-color: #994900;
-    width: 30%;
-    height: 65%;
+    width: 40%;
+    height: 70%;
     border-radius: 30px;
 
 }

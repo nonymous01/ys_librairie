@@ -1,8 +1,6 @@
 from flask import Flask, redirect,request,render_template, url_for,flash,session,render_template_string
 from os  import environ
 from flask_sqlalchemy import SQLAlchemy
-from bs4 import BeautifulSoup       
-
 
 
 app = Flask(__name__)
@@ -44,9 +42,11 @@ def panier():
     return render_template('panier.html')
 
 #vers l'acceuil connecter
-@app.route("/accueil" )
-def connect():
-        return render_template("accueil.html")
+# @app.route("/accueil" )
+# def connect():
+#         return render_template("accueil.html")
+
+
 
 #vers la page de profil
 @app.route("/admin")
@@ -81,7 +81,7 @@ def register():
             password =request.form['password']     
             if len(tel)>=10 and len(password)>=8 :
                 try:
-                    new_user=User(name,email,tel,password)
+                    new_user=User(name,email,password,tel)
                     db.session.add(new_user)
                     db.session.commit()
                     flash(f"Bienvenue!  {name}")
@@ -107,6 +107,7 @@ def login():
             #afficher le nom sur la page d'accueil
             session['user_name']=user.name
             session['user_email']=user.email
+            session['user_tel']=user.tel
             return redirect("ajouter")
         elif email =="youssef@gmail.com" and password == "youssef":
             flash("bienvenue ANONYMOUS")
@@ -163,14 +164,6 @@ class img(db.Model):
         self.name=name
         self.prix=prix
 
-#cree la BD
-with app.app_context():
-    try:
-        db.create_all()
-    except Exception as e:
-        print("erreur de la creation de la base de données")
-
-
 @app.route('/ajouter', methods =(["GET","POST"]))
 def ajouter():
      ajout=img.query.all()
@@ -193,6 +186,7 @@ def article():
         
 
 
+from bs4 import BeautifulSoup       
 #paiement 
 @app.route("/paiement", methods=["GET","POST"])
 def paiement():
@@ -260,13 +254,6 @@ class panier_user(db.Model):
         self.name=name
         self.prix=prix
         self.email=email
-#cree la BD
-with app.app_context():
-    try:
-        db.create_all()
-    except Exception as e:
-        print("erreur de la creation de la base de données")
-
 
 @app.route("/show_panier")
 def show_panier():
@@ -276,6 +263,11 @@ def show_panier():
         cpt=cpt+1
     return render_template('panier.html', datas = datas, cpt=cpt)
 
+
+@app.route("/accueil")
+def connect():
+    cpt = show_panier()  # Obtenez la valeur de `cpt`
+    return render_template("accueil.html", cpt=int(cpt))
 
 @app.route('/paniers', methods =(["GET"]))
 def paniers():

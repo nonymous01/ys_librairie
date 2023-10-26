@@ -29,12 +29,12 @@
                 <li><a href="admin">PROFIL</a></li>
                 <li><a href="commande">COMMANDE</a></li>
             </ul>
-            <input type="search" name="" placeholder="RECHERCHE..." id="recherche">
+            <div> {{cpt}} </div>
         </div>
     </div>
     <form action="">
         <div class="panier1">
-            {% for panier in paniers %}
+            {% for panier in datas %}
              <div class="cont">          
                 <div class="el">
                     <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
@@ -46,53 +46,11 @@
                     <div class="pri">Prix</div>
                     <div class="pri1">{{panier.prix}}$</div>
                 </div>
-                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
+                <div class="el2"><a href="{{url_for('panier_sup', id=panier.id)}}" class="bvnc">retirer du panier</a></div>
             </div><br><br> 
             {% endfor %}
-            <div class="cont">          
-                <div class="el">
-                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
-                </div>
-                
-                <div class="el1">azer
-                </div>
-                <div class="el3">
-                    <div class="pri">Prix</div>
-                    <div class="pri1">1234$</div>
-                </div>
-                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
-            </div><br><br> 
             
-            <div class="cont">          
-                <div class="el">
-                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
-                </div>
-                
-                <div class="el1">Lorem ipsum dolor sit amet.
-                </div>
-                <div class="el3">
-                    <div class="pri">Prix</div>
-                    <div class="pri1">123$</div>
-                </div>
-                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
-            </div><br><br> 
-            <div class="cont">          
-                <div class="el">
-                    <img src="{{url_for('static', filename='image/maint.webp')}}" height="100%" width="100%" alt="">
-                </div>
-                
-                <div class="el1">Lorem ipsum dolor sit amet.
-                </div>
-                <div class="el3">
-                    <div class="pri">Prix</div>
-                    <div class="pri1">123$</div>
-                </div>
-                <div class="el2"><a href="" class="bvnc">rétiré du panier</a></div>
-            </div><br><br> 
-            
-          
-            
-
+   
             
         </div>
         <div class="panier2">
@@ -100,6 +58,7 @@
                 <div class="tt1">
                     <div class="aa">TOTAL</div>
                     <div class="aa1">232$</div>
+                    <div> {{cpt}} </div>
                 </div>
                 <div class="tt2">
                     <div class="val">

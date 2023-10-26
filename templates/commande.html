@@ -49,12 +49,14 @@
                         <div class="choix2">NB_LIVRE</div>
                         <div class="choix3">PRIX</div>
                     </div>
+                    {% for panier in datas %}
                     <div class="nomm1">
                         <div class="choix3">30/12/2023</div>
                         <div class="choix2">HACKING</div>
-                        <div class="choix1">2</div>
+                        <div class="choix1"> {{cpt}} </div>
                         <div class="choix">100$</div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
 
