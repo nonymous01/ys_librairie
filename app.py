@@ -41,11 +41,6 @@ def indexx():
 def panier():
     return render_template('panier.html')
 
-#vers l'acceuil connecter
-# @app.route("/accueil" )
-# def connect():
-#         return render_template("accueil.html")
-
 
 
 #vers la page de profil
@@ -286,7 +281,7 @@ def panier_ajoute():
         db.session.commit()
         return redirect("/ajouter")
     return render_template('panier.html')
-
+Youssef
 
 # supp les info de la class panier
 
