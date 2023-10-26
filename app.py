@@ -256,13 +256,13 @@ def show_panier():
     cpt =0
     for _ in datas:
         cpt=cpt+1
-    return render_template('panier.html', datas = datas, cpt=cpt)
+    return render_template('panier.html', datas = datas)
 
 
 @app.route("/accueil")
 def connect():
     cpt = show_panier()  # Obtenez la valeur de `cpt`
-    return render_template("accueil.html", cpt=int(cpt))
+    return render_template("accueil.html")
 
 @app.route('/paniers', methods =(["GET"]))
 def paniers():
@@ -291,6 +291,14 @@ def panier_sup(id):
         db.session.delete(data)
         db.session.commit()
     return redirect("/paniers") 
+
+@app.route('/logout')
+def logout():
+    session.clear()  # Efface toutes les données de session
+    return redirect(url_for('indexx'))  # Redirige l'utilisateur vers la page d'accueil (ou une autre page appropriée)
+
+
+
 
 if __name__=="__main__":
      app.run(debug=True, port=5000)

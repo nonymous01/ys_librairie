@@ -32,7 +32,6 @@
                         <li><a href="./admin">PROFIL</a></li>
                         <li><a href="./commande">COMMANDE</a></li>
                     </ul>
-                    <div style="background-color: blue; width: 100px;"> {{cpt}} </div>
                     <a href="{{url_for('show_panier')}}"><div id="recherche"><img src="{{url_for('static', filename='image/panier.png')}}" height="30px"  alt=""></div></a>
                 </div>
             </div>
@@ -369,7 +368,7 @@
                     </form>
                 </div>
                 <div class="foot3">
-                    <button class="button1"><a href="{{'login'}}" style="color: white; text-decoration: none;">DECONNEXION</a></button>
+                    <button class="button1"><a href="{{'logout'}}" style="color: white; text-decoration: none;">DECONNEXION</a></button>
                 </div>
                </div>
             </header>
