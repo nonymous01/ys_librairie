@@ -76,7 +76,7 @@ def register():
             password =request.form['password']     
             if len(tel)>=10 and len(password)>=8 :
                 try:
-                    new_user=User(name,email,password,tel)
+                    new_user=User(name,email,tel,password)
                     db.session.add(new_user)
                     db.session.commit()
                     flash(f"Bienvenue!  {name}")
