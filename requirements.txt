@@ -13,3 +13,4 @@ packaging
 SQLAlchemy 
 typing_extensions 
 Werkzeug
+bs4
