@@ -93,7 +93,7 @@ header{
     margin-top: 60px;
 }
 .text{
-    background-color: rgb(129, 65, 65);
+    background-color: rgb(255, 255, 255);
     width: 50%;
     height: 100px;
     position: relative;
@@ -101,6 +101,7 @@ header{
     left: 13%;
     justify-content: center;
     text-align: center;
+    align-items: center;
     display: flex;
 }
 .image_cont{
