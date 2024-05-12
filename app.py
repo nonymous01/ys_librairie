@@ -104,9 +104,9 @@ def login():
             session['user_email']=user.email
             session['user_tel']=user.tel
             return redirect("ajouter")
-        elif email =="youssef@gmail.com" and password == "youssef":
-            flash("bienvenue ANONYMOUS")
-            return redirect('/data')         
+        elif email =="fofana@gmail.com" and password == "fofana":
+            flash("bienvenue fofana")
+            return redirect('ajouter')         
         else:
             flash('Identifiants incorrects')
     return render_template('connexion.html')
@@ -158,6 +158,11 @@ class img(db.Model):
      def __init__(self,name,prix):
         self.name=name
         self.prix=prix
+with app.app_context():
+    try:
+        db.create_all()
+    except Exception as e:
+        print("erreur de la creation de la base de données")
 
 @app.route('/ajouter', methods =(["GET","POST"]))
 def ajouter():
@@ -249,6 +254,13 @@ class panier_user(db.Model):
         self.name=name
         self.prix=prix
         self.email=email
+
+#cree la BD
+with app.app_context():
+    try:
+        db.create_all()
+    except Exception as e:
+        print("erreur de la creation de la base de données")
 
 @app.route("/show_panier")
 def show_panier():
